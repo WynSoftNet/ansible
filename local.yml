@@ -1,12 +1,12 @@
- - hosts: localhost
-   connections: local
-   become: true
+- hosts: localhost
+  connection: local
+  become: true
 
-   pre_tasks:
-     - name: Update Repositories
-       apt:
-         update_cache: yes
-       change_when: False
+  pre_tasks:
+    - name: Update Repositories
+      apt:
+        update_cache: yes
+      change_when: False
 
-   tasks:
-     - include: tasks/packages.yml
+  tasks:
+:    - include: tasks/packages.yml
