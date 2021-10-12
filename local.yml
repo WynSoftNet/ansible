@@ -1,11 +1,12 @@
 - hosts: localhost
-  connection: local
+  connections: local
   become: true
-  
+
+  pre_tasks:
+    - name: Update Repositories
+      apt:
+        update_cache: yes
+      change_when: False
+
   tasks:
-  - name: Install packages
-    apt:
-      name:
-        - htop
-        - tmux
-        - vim-nox
+    - include: tasks/packages.yml
