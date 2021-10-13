@@ -1,0 +1,13 @@
+- name: Create ansible user
+  user:
+    name: dorfl
+    comment: Ansible Automation
+    system: yes
+ 
+- name: copy sudoers_ansible
+  copy:
+    src: files/sudoers_dorfl
+    dest: /etc/sudoers.d/dorfl
+    owner: root
+    group: root
+    mode: 0440
