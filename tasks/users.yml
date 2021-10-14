@@ -11,3 +11,11 @@
     owner: root
     group: root
     mode: 0440
+
+- name: copy bashrc for root
+  copy:
+    src: files/bashrc
+    dest: /root/.bashrc
+    owner: root
+    group: root
+    mode: 0644
